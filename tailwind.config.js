@@ -4,9 +4,10 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'class',
   theme: {
     colors: {
-      white: '#f5f5f5',
+      white: '#ffffff',
       black: '#060606',
       primary: {
         50: '#a9b8da',
@@ -27,10 +28,10 @@ module.exports = {
         300: '#d1d5db',
         400: '#9ca3af',
         500: '#6b7280',
-        600: '#4b5563',
+        600: '#4b4b4b',
         700: '#374151',
-        800: '#1f2937',
-        900: '#111827',
+        800: '#1f1f1f',
+        900: '#0a0a0a',
       },
       red: {
         50: '#fef2f2',

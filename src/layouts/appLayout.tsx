@@ -12,7 +12,7 @@ export default function AppLayout({ children, title }: AppLayoutProps) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.svg' />
       </Head>
-      {children}
+      <div className='bg-white dark:bg-black'>{children}</div>
     </>
   );
 }
