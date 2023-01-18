@@ -7,6 +7,7 @@ import Stats from 'components/dashboard/stats';
 import Chart from 'components/dashboard/chart';
 import Upcoming from 'components/dashboard/upcoming';
 import LastCompletedProject from 'components/dashboard/lastCompletedProject';
+import Footer from 'components/footer';
 
 export default function Dashboard() {
   const { status } = useSession();
@@ -36,6 +37,7 @@ export default function Dashboard() {
             <LastCompletedProject />
           </div>
         </div>
+        <Footer />
       </NavLayout>
     </AppLayout>
   );
