@@ -3,6 +3,10 @@ import NavLayout from 'layouts/navLayout';
 import DotsLoader from 'components/loaders/dots';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import Stats from 'components/dashboard/stats';
+import Chart from 'components/dashboard/chart';
+import Upcoming from 'components/dashboard/upcoming';
+import LastCompletedProject from 'components/dashboard/lastCompletedProject';
 
 export default function Dashboard() {
   const { status } = useSession();
@@ -23,7 +27,15 @@ export default function Dashboard() {
   return (
     <AppLayout title='Dashboard | Project Management'>
       <NavLayout>
-        <div>Dashboard works!</div>
+        <div className='text-2xl text-black dark:text-white p-11 space-y-11'>
+          <div className='font-semibold'>Dashboard</div>
+          <Stats />
+          <Chart />
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-11'>
+            <Upcoming />
+            <LastCompletedProject />
+          </div>
+        </div>
       </NavLayout>
     </AppLayout>
   );

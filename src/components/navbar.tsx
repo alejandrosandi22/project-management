@@ -67,7 +67,7 @@ export default function Navbar({ handleToggle }: NavbarProps) {
 
   return (
     <nav
-      className='bg-light border-b border-light h-16 dark:bg-dark dark:border-gray-600'
+      className='z-40 sticky bg-white dark:bg-black top-0 w-full border-b border-gray-300 h-16 dark:border-gray-600'
       style={{ gridArea: '1 / 1 / 2 / 3' }}
     >
       <div className='relative px-8 flex items-center justify-between h-full'>
@@ -79,7 +79,10 @@ export default function Navbar({ handleToggle }: NavbarProps) {
               className='w-6 h-6 text-black dark:text-white'
             >
               <path fill='none' d='M0 0h24v24H0z' />
-              <path d='M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z' />
+              <path
+                d='M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z'
+                fill='currentColor'
+              />
             </svg>
           </button>
           <Link

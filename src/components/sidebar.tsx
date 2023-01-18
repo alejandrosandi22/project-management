@@ -6,7 +6,7 @@ export default function SideBar() {
   const { pathname } = useRouter();
   return (
     <aside
-      className='h-full w-64 border-r border-light dark:border-gray-600'
+      className='fixed left-0 top-16 h-full w-64 border-r border-gray-300 dark:border-gray-600 bg-white dark:bg-black'
       aria-label='Sidebar'
     >
       <div className='overflow-hidden py-4 px-3'>
@@ -14,15 +14,15 @@ export default function SideBar() {
           <li>
             <Link
               href='/dashboard'
-              className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 overflow-hidden'
+              className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 overflow-hidden'
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 24 24'
-                className='w-6 h-6 text-black dark:text-white'
-                style={{
-                  color: pathname === '/dashboard' ? '#4460A0' : '#ffffff',
-                }}
+                className={`w-6 h-6 text-black dark:text-white ${
+                  pathname === '/dashboard' &&
+                  'text-primary-700 dark:text-primary-500'
+                }`}
               >
                 <path fill='none' d='M0 0h24v24H0z' />
                 <path
@@ -31,10 +31,10 @@ export default function SideBar() {
                 />
               </svg>
               <span
-                className='ml-3 text-black dark:text-white'
-                style={{
-                  color: pathname === '/dashboard' ? '#4460A0' : '#ffffff',
-                }}
+                className={`ml-3 text-black dark:text-white ${
+                  pathname === '/dashboard' &&
+                  'text-primary-700 dark:text-primary-500'
+                }`}
               >
                 Dashboard
               </span>
@@ -43,24 +43,20 @@ export default function SideBar() {
           <li>
             <Link
               href='/projects'
-              className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
+              className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800'
             >
               <svg
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 24 24'
                 className='w-6 h-6 text-black dark:text-white'
                 style={{
                   color: pathname === '/projects' ? '#4460A0' : '',
                 }}
-                fill='none'
-                stroke='currentColor'
-                strokeWidth={1.5}
-                viewBox='0 0 24 24'
-                xmlns='http://www.w3.org/2000/svg'
-                aria-hidden='true'
               >
+                <path fill='none' d='M0 0h24v24H0z' />
                 <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01'
+                  d='M17 2h3a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3V0h2v2h6V0h2v2zm0 2v2h-2V4H9v2H7V4H5v16h14V4h-2zM7 8h10v2H7V8zm0 4h10v2H7v-2z'
+                  fill='currentColor'
                 />
               </svg>
               <span className='flex-1 ml-3 whitespace-nowrap'>Projects</span>
@@ -70,7 +66,7 @@ export default function SideBar() {
           <li>
             <Link
               href='/clients'
-              className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
+              className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800'
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -82,7 +78,7 @@ export default function SideBar() {
               >
                 <path fill='none' d='M0 0h24v24H0z' />
                 <path
-                  d='M17 2h3a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3V0h2v2h6V0h2v2zm0 2v2h-2V4H9v2H7V4H5v16h14V4h-2zM7 8h10v2H7V8zm0 4h10v2H7v-2z'
+                  d='M4 22a8 8 0 1 1 16 0H4zm9-5.917V20h4.659A6.009 6.009 0 0 0 13 16.083zM11 20v-3.917A6.009 6.009 0 0 0 6.341 20H11zm1-7c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z'
                   fill='currentColor'
                 />
               </svg>
@@ -92,7 +88,7 @@ export default function SideBar() {
           <li>
             <Link
               href='/settings'
-              className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
+              className='flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800'
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -114,7 +110,7 @@ export default function SideBar() {
           <li>
             <button
               onClick={() => signOut()}
-              className='w-full flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
+              className='w-full flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800'
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
