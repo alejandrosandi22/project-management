@@ -59,7 +59,14 @@ export default function SideBar() {
                   fill='currentColor'
                 />
               </svg>
-              <span className='flex-1 ml-3 whitespace-nowrap'>Projects</span>
+              <span
+                className={`ml-3 text-black dark:text-white ${
+                  pathname === '/projects' &&
+                  'text-primary-700 dark:text-primary-500'
+                }`}
+              >
+                Projects
+              </span>
             </Link>
           </li>
 
